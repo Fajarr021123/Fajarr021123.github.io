@@ -1,6 +1,9 @@
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+/*******************************/
+/********* General CSS *********/
+/*******************************/
 body {
     color: #797979;
     background: #ffffff;
@@ -130,9 +133,11 @@ a:focus {
 }
 
 
+
 /**********************************/
 /*********** Nav Bar CSS **********/
 /**********************************/
+/* Nav Bar CSS */
 .navbar {
     position: relative;
     transition: .5s;
@@ -148,12 +153,11 @@ a:focus {
 
 .navbar .navbar-brand {
     margin: 0;
-    font-size: 45px;
-    line-height: 0px;
+    font-size: 24px;
+    line-height: 1.5;
     font-weight: 700;
     letter-spacing: 2px;
     transition: .5s;
-    
 }
 
 .navbar .navbar-brand img {
@@ -168,80 +172,84 @@ a:focus {
     background: #f8f9fa;
 }
 
-@media (min-width: 992px) {
+/* Larger than medium-sized devices (tablets, 768px and up) */
+@media (min-width: 768px) {
     .navbar {
         position: absolute;
         width: 100%;
-        padding: 30px 60px;
+        padding: 15px 30px;
         background: transparent !important;
         border-bottom: 1px dashed rgba(256, 256, 256, .2);
         z-index: 9;
     }
-    
+
     .navbar.nav-sticky {
-        padding: 10px 60px;
+        padding: 10px 30px;
         background: #ffffff !important;
     }
-    
+
     .navbar .navbar-brand {
         color: #ffffff;
     }
-    
+
     .navbar.nav-sticky .navbar-brand {
         color: #FFC436;
     }
 
     .navbar-light .navbar-nav .nav-link,
     .navbar-light .navbar-nav .nav-link:focus {
-        padding: 10px 10px 8px 10px;
+        padding: 10px 15px;
         color: #ffffff;
         font-size: 15px;
         font-weight: 500;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link,
     .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
         color: #414141;
+        border-radius: 10px;
     }
 
     .navbar-light .navbar-nav .nav-link:hover,
     .navbar-light .navbar-nav .nav-link.active {
         color: #111111;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
     .navbar-light.nav-sticky .navbar-nav .nav-link.active {
         color: #FFC436;
     }
 }
 
-@media (max-width: 991.98px) {   
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 599.98px) {
     .navbar {
-        padding: 15px;
+        padding: 10px;
         background: #ffffff !important;
     }
-    
+
     .navbar .navbar-brand {
         color: #FFC436;
+        font-size: 20px;
     }
-    
+
     .navbar .navbar-nav {
-        margin-top: 15px;
+        margin-top: 10px;
     }
-    
+
     .navbar a.nav-link {
         padding: 5px;
     }
-    
+
     .navbar .dropdown-menu {
         box-shadow: none;
     }
-    .navbar .navbar-brand .logo-img {
-        max-width: 120%;
-        max-height: 80px;
-        margin-right: 40px; /* Adjust the margin as needed */
+
+    .navbar .navbar-brand img {
+        max-width: 100%;
+        max-height: 40px;
+        margin-right: 0;
     }
-   
 }
 
 
@@ -271,13 +279,13 @@ a:focus {
 }
 
 .hero .hero-image img {
-    max-width: 150%;
-    max-height: 150%;
+    max-width: 100%; /* Adjusted to ensure responsiveness */
+    max-height: auto; /* Adjusted to ensure responsiveness */
 }
 
 .hero .hero-content {
     position: relative;
-    padding-left: 75px;
+    padding-left: 15px; /* Adjusted for better spacing */
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -286,14 +294,14 @@ a:focus {
 
 .hero .hero-text p {
     color: #ffffff;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
 .hero .hero-text h1 {
     color: #ffffff;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 700;
     letter-spacing: 3px;
     margin-bottom: 15px;
@@ -336,6 +344,7 @@ a:focus {
     margin-right: 10px;
 }
 
+/* Media queries for responsiveness */
 @media (max-width: 991.98px) {
     .hero {
         padding-top: 60px;
@@ -346,11 +355,11 @@ a:focus {
     }
     
     .hero .hero-text p {
-        font-size: 30px;
+        font-size: 18px;
     }
     
     .hero .hero-text h1 {
-        font-size: 45px;
+        font-size: 35px;
     }
     
     .hero .hero-text h2 {
@@ -378,26 +387,6 @@ a:focus {
     }
     
     .hero .hero-text p {
-        font-size: 18px;
-    }
-    
-    .hero .hero-text h1 {
-        font-size: 35px;
-    }
-    
-    .hero .hero-text h2 {
-        font-size: 22px;
-        height: 22px;
-    }
-    
-    .hero .hero-btn .btn {
-        padding: 10px 15px;
-        letter-spacing: 1px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .hero .hero-text p {
         font-size: 16px;
     }
     
@@ -411,11 +400,30 @@ a:focus {
     }
     
     .hero .hero-btn .btn {
+        padding: 10px 15px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero .hero-text p {
+        font-size: 14px;
+    }
+    
+    .hero .hero-text h1 {
+        font-size: 25px;
+    }
+    
+    .hero .hero-text h2 {
+        font-size: 16px;
+        height: 16px;
+    }
+    
+    .hero .hero-btn .btn {
         padding: 8px 10px;
         letter-spacing: 0;
     }
 }
-
 
 /*******************************/
 /******* Section Header ********/
@@ -423,13 +431,14 @@ a:focus {
 .section-header {
     position: relative;
     margin-bottom: 45px;
+    text-align: center; /* Center-align the content */
 }
 
 .section-header p {
     display: inline-block;
-    margin: 0 30px;
+    margin: 0;
     margin-bottom: 10px;
-    padding-left: 15px;
+    padding: 0 15px; /* Adjusted for better spacing */
     position: relative;
     font-size: 16px;
     font-weight: 600;
@@ -442,22 +451,15 @@ a:focus {
     position: absolute;
     content: "";
     height: 3px;
-    top: 11px;
+    top: 50%; /* Adjusted to center the line vertically */
     right: 0;
-    left: -30px;
+    left: 0;
     background: #FFC436;
     z-index: -1;
 }
 
 .section-header p::after {
-    position: absolute;
-    content: "";
-    width: 3px;
-    height: 3px;
-    top: 11px;
-    left: 3px;
-    background: #FFC436;
-    z-index: 1;
+    display: none; /* Hide the small dot */
 }
 
 .section-header h2 {
@@ -470,6 +472,10 @@ a:focus {
 @media (max-width: 767.98px) {
     .section-header h2 {
         font-size: 30px;
+    }
+    
+    .section-header p::before {
+        top: 35%; /* Adjusted for better spacing on smaller screens */
     }
 }
 
@@ -489,6 +495,7 @@ a:focus {
 
 .about .section-header {
     margin-bottom: 30px;
+    text-align: center; /* Center-align the content */
 }
 
 .about .about-img {
@@ -505,7 +512,7 @@ a:focus {
 }
 
 .about .about-content {
-    padding: 0 60px;
+    padding: 0 30px; /* Adjusted for better spacing */
 }
 
 .about .about-text p {
@@ -541,7 +548,7 @@ a:focus {
     width: 0px;
     background: #FFC436;
     border-radius: 10px;
-    transition: 2s;
+    transition: width 2s; /* Changed the transition property */
 }
 
 .about .about-text a.btn {
@@ -566,6 +573,8 @@ a:focus {
 .experience .timeline {
     position: relative;
     width: 100%;
+    overflow-x: auto; /* Added overflow property for horizontal scrolling */
+    white-space: nowrap;
 }
 
 .experience .timeline::after {
@@ -584,6 +593,7 @@ a:focus {
     background: inherit;
     width: 50%;
     margin-bottom: 30px;
+    display: inline-block; /* Changed to inline-block for horizontal arrangement */
 }
 
 .experience .timeline .timeline-item.left {
@@ -614,20 +624,20 @@ a:focus {
 }
 
 .experience .timeline .timeline-item::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 46px;
-  right: 10px;
-  z-index: 1;
-  border: 10px solid;
-  border-color: transparent transparent transparent #dddddd;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 46px;
+    right: 10px;
+    z-index: 1;
+    border: 10px solid;
+    border-color: transparent transparent transparent #dddddd;
 }
 
 .experience .timeline .timeline-item.right::before {
-  left: 10px;
-  border-color: transparent #dddddd transparent transparent;
+    left: 10px;
+    border-color: transparent #dddddd transparent transparent;
 }
 
 .experience .timeline .timeline-date {
@@ -644,12 +654,12 @@ a:focus {
 
 .experience .timeline .timeline-item.left .timeline-date {
     text-align: left;
-    left: calc(100% + 55px);
+    left: calc(100% + 15px); /* Adjusted for better spacing */
 }
 
 .experience .timeline .timeline-item.right .timeline-date {
     text-align: right;
-    right: calc(100% + 55px);
+    right: calc(100% + 15px); /* Adjusted for better spacing */
 }
 
 .experience .timeline .timeline-text {
@@ -682,16 +692,7 @@ a:focus {
     margin: 0;
     font-size: 16px;
 }
-.experience .scroll-container {
-    background-color: #333;
-    overflow: auto;
-    white-space: nowrap;
-    padding: 10px;
-  }
-  
-.experience .scroll-container img {
-    padding: 10px;
-  }
+
 @media (max-width: 767.98px) {
     .experience .timeline::after {
         left: 8px;
@@ -700,17 +701,15 @@ a:focus {
     .experience .timeline .timeline-item {
         width: 100%;
         padding-left: 38px;
+        padding-right: 38px;
     }
     
-    .experience .timeline .timeline-item.left {
+    .experience .timeline .timeline-item.left,
+    .experience .timeline .timeline-item.right {
+        padding-left: 0;
         padding-right: 0;
     }
     
-    .experience .timeline .timeline-item.right {
-        left: 0%;
-        padding-left: 38px;
-    }
-
     .experience .timeline .timeline-item.left::after, 
     .experience .timeline .timeline-item.right::after {
         left: 0;
@@ -735,7 +734,7 @@ a:focus {
     .experience .timeline .timeline-item.left .timeline-text,
     .experience .timeline .timeline-item.right .timeline-text {
         border-right: none;
-        border-left: 5px solid #dddddd;
+        border-left: none;
     }
 }
 
@@ -985,13 +984,13 @@ a:focus {
 }
 
 /*******************************/
-/********* project css **********/
+/********* Project CSS **********/
 /*******************************/
 :root {
-  --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) ;
+    --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
 }
 
-  .card {
+.card {
     position: relative;
     width: 100%;
     margin: -45px 0 45px 0;
@@ -999,29 +998,28 @@ a:focus {
     border: 4px solid #dd2476;
     color: rgba(250, 250, 250, 0.8);
     margin-bottom: 5rem;
-    
     padding: 12px 25px;
-  }
-  
-  .card .btn {
+}
+
+.card .btn {
     border: 5px solid;
     border-image-slice: 1;
     background: var(--gradient) !important;
-    /* -webkit-background-clip: text !important; */
-    /* -webkit-text-fill-color: transparent !important;  */
-    border-image-source:  var(--gradient) !important; 
+    border-image-source: var(--gradient) !important;
     text-decoration: none;
-    transition: all .4s ease;
-  }
-  
-  .card.btn:hover, .btn:focus {
-        background: var(--gradient) !important;
+    transition: all 0.4s ease;
+}
+
+.card.btn:hover,
+.btn:focus {
+    background: var(--gradient) !important;
     -webkit-background-clip: none !important;
     -webkit-text-fill-color: #fff !important;
-    border: 5px solid #fff !important; 
+    border: 5px solid #fff !important;
     box-shadow: #222 1px 0 10px;
     text-decoration: underline;
-  }
+}
+
 /*******************************/
 /********* Contact CSS *********/
 /*******************************/
@@ -1029,37 +1027,33 @@ a:focus {
     position: relative;
     width: 100%;
     margin: 45px 0;
-    background: #FFC436;
+    border-radius: 25px;
 }
 
 .contact .container-fluid {
     background: url(../img/fjr_3.jpeg) left center no-repeat;
-    background-size:contain;
+    background-size: contain;
+    border-radius: 25px;
+   
 }
 
 .contact .contact-form {
     position: relative;
     padding: 90px 0 90px 45px;
     background: #FFC436;
+    border-radius: 25px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.2);
+    
 }
 
-.contact .contact-form input {
-    color: #ffffff;
-    padding: 15px 0;
-    background: none;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(256, 256, 256, .5);
-}
-
+.contact .contact-form input,
 .contact .contact-form textarea {
     color: #ffffff;
-    height: 90px;
     padding: 15px 0;
     background: none;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid rgba(256, 256, 256, .5);
+    border-bottom: 1px solid rgba(256, 256, 256, 0.5);
 }
 
 .contact .contact-form .form-control::placeholder {
@@ -1099,7 +1093,7 @@ a:focus {
     .contact .container-fluid {
         background: none;
     }
-    
+
     .contact .contact-form {
         padding: 90px 0;
     }
@@ -1181,14 +1175,14 @@ a:focus {
     margin: 0;
 }
 
-
 /*******************************/
 /********* Footer CSS **********/
 /*******************************/
 .footer {
     position: relative;
-    margin-top: 45px;
+    margin-top: 50px;
     background: #FFC436;
+    border-radius: 30px 30px 0 0 ;
 }
 
 .footer .container-fluid {
@@ -1219,6 +1213,7 @@ a:focus {
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Add this line to wrap menu items on smaller screens */
 }
 
 .footer .footer-menu p {
@@ -1310,5 +1305,8 @@ a:focus {
         font-size: 16px;
         line-height: 16px;
         padding: 0 5px;
+        border-right: none;
+        margin-bottom: 10px;
     }
 }
+
