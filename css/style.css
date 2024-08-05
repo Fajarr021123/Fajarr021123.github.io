@@ -262,10 +262,11 @@ a:focus {
     margin-bottom: 45px;
     padding: 120px 0 0 0;
     overflow: hidden;
-    background:  url(../img/bgnew1.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url(../img/bgnew1.png) center center no-repeat;
+    background-size: cover; /* Ensure the background covers the entire hero section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 600px; /* Max height for desktop */
 }
 
@@ -348,6 +349,7 @@ a:focus {
 @media (max-width: 991.98px) {
     .hero {
         padding-top: 60px;
+        height: auto; /* Adjust height for smaller screens */
     }
 
     .hero .hero-content {
@@ -377,6 +379,7 @@ a:focus {
     .hero {
         padding-top: 60px;
         padding-bottom: 60px;
+        height: auto; /* Adjust height for smaller screens */
     }
 
     .hero,
@@ -408,7 +411,7 @@ a:focus {
 @media (max-width: 575.98px) {
     .hero {
         padding-top: 60px;
-        max-height: none; /* Remove max height for smaller screens */
+        height: auto; /* Adjust height for smaller screens */
     }
 
     .hero .hero-text p {
@@ -429,6 +432,7 @@ a:focus {
         letter-spacing: 0;
     }
 }
+
 
 
 /*******************************/
@@ -1090,22 +1094,23 @@ a:focus {
     width: 100%;
     margin: 45px 0;
     border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
 }
 
-.contact .container-fluid {
-    background: url(../img/fjr_3.jpeg) left center no-repeat;
-    background-size: contain;
-    border-radius: 25px;
-   
-}
+
 
 .contact .contact-form {
     position: relative;
-    padding: 90px 0 90px 45px;
+    padding: 90px 45px;
     background: #FFC436;
     border-radius: 25px;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2), 0 12px 32px rgba(0, 0, 0, 0.2);
-    
+    width: 100%;
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin: 0 auto;
 }
 
 .contact .contact-form input,
@@ -1152,12 +1157,44 @@ a:focus {
 }
 
 @media (max-width: 767.98px) {
+    .contact {
+        margin: 20px 0;
+    }
+
     .contact .container-fluid {
         background: none;
+        padding: 20px;
     }
 
     .contact .contact-form {
-        padding: 90px 0;
+        padding: 30px 20px;
+        box-shadow: none;
+    }
+
+    .contact .contact-form input,
+    .contact .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact .contact-form .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact .contact-form {
+        padding: 20px 10px;
+    }
+
+    .contact .contact-form input,
+    .contact .contact-form textarea {
+        font-size: 12px;
+    }
+
+    .contact .contact-form .btn {
+        font-size: 12px;
+        padding: 8px 16px;
     }
 }
 
